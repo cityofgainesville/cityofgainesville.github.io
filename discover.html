@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
-	  <!-- Google Tag Manager -->
+<head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-THJTRZ3');</script>
 <!-- End Google Tag Manager -->
+	  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148608656-1"></script>
 <script>
@@ -16,21 +17,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'UA-148608656-1');
 </script>
+
+<!-- Capture Outbound Links Tag -->
+<script>
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
 	  
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>myGNV</title>
-  </head> 
-  <title>
-	myGNV
-  </title>
-  <body>
-	  <!-- Google Tag Manager (noscript) -->
+</head> 
+  
+<title>myGNV</title>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THJTRZ3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -77,61 +93,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</h1>
 	<h2 style="line-height: 1rem;text-indent: 0.5rem;">Get involved, find resources, and more.</h2>   
 </body>  
-
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; border-top: 0.1px solid #8D9297; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  Things To Do
 </h1>
 	<div>
-  	    <form action="http://cityofgainesville.org/Calendar">
+  	    <form action="http://cityofgainesville.org/Calendar" onclick="captureOutboundLink('Calendar'); return true;">
     	<button type="submit" value=<p>City Events Calendar</p></button></form>  
     </div>
     <div>
-  	    <form action="http://www.cityofgainesville.org/ParksRecreationCulturalAffairs/ArtsCulture.aspx">
+  	    <form action="http://www.cityofgainesville.org/ParksRecreationCulturalAffairs/ArtsCulture.aspx" onclick="captureOutboundLink('ArtsCulture'); return true;">
     	<button type="submit"<p>Gainesville Arts &amp; Culture</p></button></form>  
     </div>
     <div>
-  	    <form action="http://www.cityofgainesville.org/ParksRecreationCulturalAffairs/ArtsCulture/HistoricLandmarks.aspx?">
+  	    <form action="http://www.cityofgainesville.org/ParksRecreationCulturalAffairs/ArtsCulture/HistoricLandmarks.aspx?" onclick="captureOutboundLink('HistoricLandmarks'); return true;">
     	<button type="submit" value=<p>List of Historic Landmarks</p></button></form>  
     </div>
     <div>
-  	    <form action="https://www.visitgainesville.com/">
+  	    <form action="https://www.visitgainesville.com/" onclick="captureOutboundLink('VisitGainesville'); return true;">
     	<button type="submit" value=<p>Visit Gainesville</p></button></form>  
     </div>
-
-
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  Transportation
 </h1>
     <div>
-  	    <form action="https://cityofgainesville.github.io/go-rts-trip-planner-b.html">
+  	    <form action="https://cityofgainesville.github.io/go-rts-trip-planner-b.html" onclick="captureOutboundLink('BusTripPlanner'); return true;">
     	<button type="submit" value=<p>Bus Routes Trip Planner</p></button></form>  
     </div>
     <div>
-  	    <form action="http://gac-smarttraffic.com/?">
+  	    <form action="http://gac-smarttraffic.com/?" onclick="captureOutboundLink('TrafficCameras'); return true;">
     	<button type="submit" value=<p>Live Traffic Cameras</p></button></form>  
     </div>
-
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  Services
 </h1>
     <div>
-  	    <form action="https://seeclickfix.com/web_portal/qY3dAyCAoB7xVRHGDf2x74hP/issues/map?">
+  	    <form action="https://seeclickfix.com/web_portal/qY3dAyCAoB7xVRHGDf2x74hP/issues/map?" onclick="captureOutboundLink('SubmittedRequests'); return true;">
     	<button type="submit" value=<p>Submitted Service Requests</p></button></form>  
     </div>
 	<div>
-  	    <form action="http://www.cityofgainesville.org/Departments.aspx?">
+  	    <form action="http://www.cityofgainesville.org/Departments.aspx?" onclick="captureOutboundLink('Departments'); return true;">
     	<button type="submit" value=<p>City Departments Directory</p></button></form>  
     </div>
     <div>
-  	    <form action="https://www.governmentjobs.com/careers/gainesville?">
+  	    <form action="https://www.governmentjobs.com/careers/gainesville?" onclick="captureOutboundLink('Jobs'); return true;">
     	<button type="submit" value=<p>Gainesville Government Jobs</p></button></form>  
     </div>
     <div>
-  	    <form action="https://egov.cityofgainesville.org/citizenaccess/?">
+  	    <form action="https://egov.cityofgainesville.org/citizenaccess/?" onclick="captureOutboundLink('PlanningProjects'); return true;">
     	<button type="submit" value=<p>Planning Projects, Permits &amp; Inspections</p></button></form>  
     </div>
     <div>
-  	    <form action="https://www.votealachua.com/?">
+  	    <form action="https://www.votealachua.com/?" onclick="captureOutboundLink('VoteAlachua'); return true;">
     	<button type="submit" value=<p>Voter Registration &amp; Information</p></button></form>  
     </div>
 
@@ -139,88 +151,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  Your Community
 </h1>
     <div>
-  	    <form action="http://www.servegnv.org">
+  	    <form action="http://www.servegnv.org" onclick="captureOutboundLink('serveGNV'); return true;">
     	<button type="submit" value=<p>Volunteer Opportunities</p></button></form>  
     </div>
 	<div>
-  	    <form action="http://www.servegnv.org/agency/index/">
+  	    <form action="http://www.servegnv.org/agency/index/" onclick="captureOutboundLink('nonprofits'); return true;">
     	<button type="submit" value=<p>Non-profits in Gainesville</p></button></form>  
     </div>
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  City Commission
 </h1>
     <div>
-  	 <form action="http://www.cityofgainesville.org/CityCommission.aspx">
+  	 <form action="http://www.cityofgainesville.org/CityCommission.aspx" onclick="captureOutboundLink('CityCommission'); return true;">
     		<button type="submit" value=<p>Mayor &amp; City Commissioners</p></form>  
 	</div>
 	<div>
-  	 <form action="http://www.cityofgainesville.org/CityCommission/RequestanAppointment.aspx?">
+  	 <form action="http://www.cityofgainesville.org/CityCommission/RequestanAppointment.aspx?" onclick="captureOutboundLink('RequestAppointment'); return true;">
     		<button type="submit" value=<p>Schedule an Appointment</p></form>  
 	</div>
 	<div>
-  	 <form action="http://www.cityofgainesville.org/CommunicationsOffice/Community12TV/LiveWebStreaming.aspx?">
+  	 <form action="http://www.cityofgainesville.org/CommunicationsOffice/Community12TV/LiveWebStreaming.aspx?" onclick="captureOutboundLink('LiveStreaCommission'); return true;">
     		<button type="submit" value=<p>Live Stream City Commission Meetings</p></form>  
 	</div>
 	<div>
-  	 <form action="http://www.cityofgainesville.org/CityCommission/CommunityInterests/StateoftheCityAddress.aspx?">
+  	 <form action="http://www.cityofgainesville.org/CityCommission/CommunityInterests/StateoftheCityAddress.aspx?" onclick="captureOutboundLink('StateCityAddress'); return true;">
     		<button type="submit" value=<p>Watch State of the City Addresses</p></form>  
 	</div>
-
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  News &amp; Social Media Channels
 </h1>
 	<div>
-  		<form action="http://www.cityofgainesville.org/GOVERNMENT/CityDepartmentsAM/CommunicationsOffice/ProgramSchedule/tabid/327/Default.aspx?">
+  		<form action="http://www.cityofgainesville.org/GOVERNMENT/CityDepartmentsAM/CommunicationsOffice/ProgramSchedule/tabid/327/Default.aspx?" onclick="captureOutboundLink('Channel12'); return true;">
     		<button type="submit" value=<p>Local Channel 12 Program Schedule</p></button></form>  
 	</div>
 	<div>
-  	 <form action="http://www.cityofgainesville.org/Newsroom.aspx?">
+  	 <form action="http://www.cityofgainesville.org/Newsroom.aspx?" onclick="captureOutboundLink('Newsroom'); return true;">
     		<button type="submit" value=<p>Read the City's Newsroom</p></button></form>  
 	</div>
-	<div>
+	<!-- div>
   	 <form action="">
     		<button type="submit" value=<p>Subscribe to the City's Newsletter</p></button></form>  
-	</div>
+	</div -->
 	<div>
-  	 <form action="https://www.youtube.com/user/gainesvillepio">
+  	 <form action="https://www.youtube.com/user/gainesvillepio" onclick="captureOutboundLink('YouTube'); return true;">
     		<button type="submit" value=<p>YouTube</p></button></form>  
 	</div>
 	<div>
-  	 <form action="https://m.facebook.com/GainesvilleFL/">
+  	 <form action="https://m.facebook.com/GainesvilleFL/" onclick="captureOutboundLink('Facebook'); return true;">
     		<button type="submit" value=<p>Facebook</p></form>  
 	</div>
 	<div>
-  	 <form action="https://twitter.com/gainesvillegov">
+  	 <form action="https://twitter.com/gainesvillegov" onclick="captureOutboundLink('Twitter'); return true;">
     		<button type="submit" value=<p>Twitter</p></form>  
 	</div>
 	<div>
-  	 <form action="http://www.flickr.com/gainesville/">
+  	 <form action="http://www.flickr.com/gainesville/" onclick="captureOutboundLink('Flickr'); return true;">
     		<button type="submit" value=<p>Flickr</p></form>  
 	</div>
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
  Open Data
 </h1>
 	<div>
-  	 <form action="https://data.cityofgainesville.org">
+  	 <form action="https://data.cityofgainesville.org" onclick="captureOutboundLink('dataGNV'); return true;">
     		<button type="submit" value=<p>dataGNV</p></form>  
 	</div>
 	<div>
-  	 <form action="http://budget.cityofgainesville.org/">
+  	 <form action="http://budget.cityofgainesville.org/" onclick="captureOutboundLink('budgetGNV'); return true;">
     		<button type="submit" value=<p>budgetGNV</p></form>  
 	</div>
 	<div>
-  	 <form action="http://spending.cityofgainesville.org/">
+  	 <form action="http://spending.cityofgainesville.org/" onclick="captureOutboundLink('spendingGNV'); return true;">
     		<button type="submit" value=<p>spendingGNV</p></form>  
 	</div>
 	<div>
-  	 <form action="https://stat.cityofgainesville.org/">
+  	 <form action="https://stat.cityofgainesville.org/" onclick="captureOutboundLink('statGNV'); return true;">
     		<button type="submit" value=<p>statGNV</p></form>  
 	</div>
 	<div>
-  	 <form action="https://gainesvillefl.maps.arcgis.com/home/index.html">
+  	 <form action="https://gainesvillefl.maps.arcgis.com/home/index.html" onclick="captureOutboundLink('GISmaps'); return true;">
     		<button type="submit" value=<p>Gainesville Maps</p></form>  
 	</div>
-
 <br><h2 style="text-indent: 0.5rem;">myGNV Release 1.0</h2>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

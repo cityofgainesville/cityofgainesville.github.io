@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
-	  <!-- Google Tag Manager -->
+<head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-THJTRZ3');</script>
 <!-- End Google Tag Manager -->
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148608656-1"></script>
 <script>
@@ -16,24 +17,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'UA-148608656-1');
 </script>
-	  
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Capture Outbound Links Tag -->
+<script>
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
 
-    <title>myGNV</title>
-  </head> 
-  <title>
-	myGNV
-  </title>
-  <body>
-	  <!-- Google Tag Manager (noscript) -->
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>myGNV</title>
+</head> 
+
+<body>
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THJTRZ3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
 	<style>
 	  h1 { 
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";  
@@ -81,34 +97,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  City Services
 </h1>
 <div>
-  	<form action="https://apps.gru.com/YourAccount/login.jsp">
+  	<form action="https://apps.gru.com/YourAccount/login.jsp" onclick="captureOutboundLink('GRUbill'); return true;">
     		<button type="submit" value=<p>GRU Bill</p></form>  
 </div>
 <div>
-  	<form action="https://eservices1.cityofgainesville.org/BusinessTax/6/Start.aspx">
+  	<form action="https://eservices1.cityofgainesville.org/BusinessTax/6/Start.aspx" onclick="captureOutboundLink('BusinessTax'); return true;">
     		<button type="submit" value=<p>Business Taxes</p></form>  
 </div>
 <div>
-  	<form action="https://llp.cityofgainesville.org/License">
+  	<form action="https://llp.cityofgainesville.org/License" onclick="captureOutboundLink('LandlordPermits'); return true;">
     		<button type="submit" value=<p>Landlord Permits</p></form>  
 </div>
 <h1 style="background-color:#EDEFF0; padding: 0.5rem; border-left: none; margin: 0px;font-size: 1rem;line-height: 0.8rem;">
- Parking & Tickets
+ Parking &amp; Tickets
 </h1>
 <div>
-  	<form action="https://ppprk.com/park/">
+  	<form action="https://ppprk.com/park/" onclick="captureOutboundLink('ParkingMeter'); return true;">
     		<button type="submit" value=<p>Parking Meter</p></form>  
 </div>
 <div>
-  	<form action="https://cityofgainesville.t2hosted.com/cmn/auth.aspx">
+  	<form action="https://cityofgainesville.t2hosted.com/cmn/auth.aspx" onclick="captureOutboundLink('ParkingDecal'); return true;">
     		<button type="submit" value=<p>Parking Decal</p></form>  
 </div>
 <div>
-  	<form action="https://cityofgainesville.t2hosted.com/Account/Portal">
+  	<form action="https://cityofgainesville.t2hosted.com/Account/Portal" onclick="captureOutboundLink('ParkingCitation'); return true;">
     		<button type="submit" value=<p>Parking Citation</p></form>  
 </div>
 <div>
-  	<form action="https://www.alachuacounty.us/Depts/Clerk/Traffic%20Citations/Pages/PayTicket.aspx">
+  	<form action="https://www.alachuacounty.us/Depts/Clerk/Traffic%20Citations/Pages/PayTicket.aspx" onclick="captureOutboundLink('TrafficTicket'); return true;">
     		<button type="submit" value=<p>Traffic Ticket</p></form>  
 </div>
 <br><h2 style="text-indent: 0.5rem;">myGNV Release 1.0</h2>

@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
-	<!-- Google Tag Manager -->
+<head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-THJTRZ3');</script>
 <!-- End Google Tag Manager -->
+	
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148608656-1"></script>
 <script>
@@ -16,25 +17,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'UA-148608656-1');
 </script>
+	
+<!-- Capture Outbound Links Tag -->
+<script>
+/**
+* Function that captures a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
 	  
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>myGNV</title>
-  </head> 
-  <title>
-	myGNV
-  </title>
+<title>myGNV</title>
+</head> 
+
+<title>myGNV</title>
   <body>
-	  <!-- Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THJTRZ3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-	<style>
+
+	  <style>
 	  h1 { 
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";  
 		font-style: normal; 
@@ -88,19 +105,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     		<button type="submit" value=<p><img src="discover-icon.png" height="100%"> Discover</p></form>  
 </div>
 <div>
-  	<form action="https://seeclickfix.com/web_portal/qY3dAyCAoB7xVRHGDf2x74hP/report/location">
+  	<form action="https://seeclickfix.com/web_portal/qY3dAyCAoB7xVRHGDf2x74hP/report/location" onclick="captureOutboundLink('ReportIssue'); return true;">
     		<button formtarget="_blank" type="submit" value=<p><img src="issue-icon.png" height="100%"> Report Issue</p></form>  
 </div>
 <div>
-  	<form action="http://www.gainesvillepd.org/Virtual-Front-Desk/Online-Reporting">
+  	<form action="http://www.gainesvillepd.org/Virtual-Front-Desk/Online-Reporting" onclick="captureOutboundLink('ReportCrime'); return true;">
     		<button formtarget="_blank" type="submit" value=<p><img src="crime-icon.png" height="100%"> Report Crime</p></form>  
 </div>
 <div>
-  	<form action="https://www.intouchwebsite.com/cityofgainesville">
+  	<form action="https://www.intouchwebsite.com/cityofgainesville" onclick="captureOutboundLink('ReportFraud'); return true;">
     		<button formtarget="_blank" type="submit" value=<p><img src="fraud-icon.png" height="100%"> Report Fraud</p></form>  
 </div>
 <div>
-  	<form action="http://www.gru.com/StormCentral/ReportanOutage.aspx">
+  	<form action="http://www.gru.com/StormCentral/ReportanOutage.aspx" onclick="captureOutboundLink('PowerOutage'); return true;">
     		<button formtarget="_blank" type="submit" value=<p><img src="outage-icon.png" height="100%"> Power Outage</p></form>  
 </div>
 
